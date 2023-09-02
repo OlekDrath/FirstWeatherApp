@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+
+
+<body background="images.BG.jpg">
+    <div class="container">
+
+        <!-- Search Box      -->
+        <div class="search-box">
+            <form id="myForm" method="post">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" id="location" name="location" placeholder="Enter location">
+                <button class="fa-solid fa-magnifying-glass fa-sm" type="submit" id="location" name="location"></button>
+            </form>
+        </div>
+
+        <!-- Main info about weather and Icon       -->
+        <% if (locals.weatherMain){ %>
+            <div class="weather-info-big">
+                <div class="weatherIcon"><img src="<%= `https://openweathermap.org/img/wn/${weatherIcon}@2x.png` %>"
+                        alt="Weather Icon"></div>
+                <div class="weatherMain">
+                    <%= weatherMain %>
+                </div>
+            </div>
+
+            <!-- Secondary Info about Weather (Temperature and Wind) -->
+            <div class="weather-info-small">
+                <div class="weatherTemp">
+                    <i class="fa-solid fa-temperature-three-quarters"></i>
+                    <%= weatherTemp +"℃" %>
+                </div>
+
+                <div class="weatherWind">
+                    <i class="fa-solid fa-wind"></i>
+                    <%= weatherWind + "km/h" %>
+                </div>
+            </div>
+
+            <!-- When wrong location is entered display This             -->
+            <% }else if(locals.error){ %>
+                <div class="not-found">
+                    <img src="images/404.png" alt="">
+                    <p>Oops! Invalid location! :/</p>
+                </div>
+                <% } %>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+        <% const year=(new Date()).getFullYear(); %>
+
+            <p>Copyright © Olek Drath <%= year %>
+            </p>
+    </footer>
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+* {
+    outline: none;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    background-image: url("https://w.wallhaven.cc/full/lq/wallhaven-lq8o2l.jpg");
+    background-position: 100%;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    height: 450px;
+    width: 400px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    margin: 10% 40%;
+
+}
+
+.search-box {
+    position: relative;
+    padding: 10px 10px;
+    margin: 0% 15%;
+    top: -5%;
+    width: 400px;
+    z-index: 9;
+}
+
+
+.fa-solid fa-location-dot {
+    position: relative;
+    margin: 10px 10px;
+}
+
+input {
+    position: relative;
+    top: -5px;
+    width: 165px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-size: 24px;
+    border: transparent;
+    background-color: transparent;
+
+}
+
+input:focus {
+    border-block-end: 1px solid aliceblue;
+    transition: 0.4s;
+    left: 0;
+}
+
+button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    top: 3px;
+}
+
+.weather-info-big {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.weatherIcon {
+    display: flex;
+    position: relative;
+    width: 100px;
+    background: white;
+    border-radius: 25px;
+    margin: 0px 35%;
+}
+
+.weatherMain {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 10px 10px;
+    left: -2%;
+}
+
+.weather-info-small {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 00px;
+    font-size: 30px;
+}
+
+.weatherTemp {
+    position: relative;
+    margin: 10px 20px;
+    width: 150px;
+}
+
+.weatherWind {
+    position: relative;
+    margin: 10px 20px;
+    width: 210px;
+}
+
+.not-found {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 10px 10px;
+    font-size: 35px;
+    height: 240px;
+}
+
+.not-found img {
+    position: relative;
+    width: 250px;
+    left: 17%;
+    margin: -40px 0px;
+}
+
+footer {
+    position: fixed;
+    color: white;
+    text-align: right;
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 98%;
+    height: 40px;
+}
