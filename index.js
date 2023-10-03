@@ -42,7 +42,7 @@ app.post("/", async (req, res) => {
         const lat = coordinates.data[0].lat;
         const lon = coordinates.data[0].lon;
 
-        // Sending the coordinates to the Public Weather API Server to get infomration about weather in that location
+        // Sending the coordinates to the Public Weather API Server to get infomration about weather conditions in that location
 
         const locationWeather = await axios.get(API_URL + "/data/2.5/weather?lat=" + lat + "&lon="
             + lon + "&units=metric&appid=" + API_KEY);
@@ -54,14 +54,15 @@ app.post("/", async (req, res) => {
             weatherDescription: locationWeather.data.weather[0].description,
             weatherIcon: locationWeather.data.weather[0].icon,
             weatherTemp: locationWeather.data.main.temp,
-            weatherWind: locationWeather.data.wind.speed
+            weatherWind: locationWeather.data.wind.speed,
+            cityName: locationWeather.data.name,
+            countryName: locationWeather.data.sys.country,
         });
 
         // If user has enetered the wrong location name this will pop up instead
 
     } catch (error) {
-        res.render("index.ejs", { error: error.response.data });
-        console.log(error.response.data)
+        res.render("index.ejs", { error: error });
     }
 });
 
